@@ -1,0 +1,105 @@
+.services-section-home1 {
+  background-color: #f8f5f1;
+  position: relative;
+  padding: 120px 0 90px;
+  z-index: 1;
+}
+.services-section-home1 .icon-wave-line {
+  left: -620px;
+  bottom: -90px;
+}
+
+.service-block {
+  position: relative;
+  margin-bottom: -170px;
+  z-index: 1;
+}
+@media (max-width: 991.98px) {
+  .service-block {
+    margin-bottom: 30px;
+  }
+}
+.service-block .inner-box {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.service-block .inner-box:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+.service-block .inner-box:hover .read-more {
+  background-color: var(--theme-color2);
+}
+.service-block .content-box {
+  position: relative;
+  padding: 20px 30px 40px;
+  background-color: #ffffff;
+}
+.service-block .content-box .icon {
+  color: var(--theme-color1);
+  display: block;
+  font-size: 60px;
+  line-height: 1.5;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.service-block .content-box .sub-title {
+  color: #767676;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.service-block .content-box .title {
+  color: var(--theme-color3);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+.service-block .content-box .title a {
+  color: var(--theme-color3);
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.service-block .content-box .title a:hover {
+  color: var(--theme-color2);
+}
+.service-block .content-box .text {
+  font-size: 15px;
+  line-height: 30px;
+  color: #767676;
+  font-weight: 500;
+}
+.service-block .content-box .read-more {
+  background-color: var(--theme-color1);
+  border-radius: 5px;
+  bottom: -22px;
+  color: #fff;
+  height: 46px;
+  line-height: 46px;
+  position: absolute;
+  text-align: center;
+  width: 46px;
+  z-index: 1;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.service-block .image-box {
+  position: relative;
+}
+.service-block .image-box .image {
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.service-block .image-box .image img {
+  width: 100%;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
