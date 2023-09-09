@@ -6,6 +6,7 @@ import Service from "./component/service/Service";
 import Whychooseus from "./component/whychooseus/Whychooseus";
 import Whychooseus2 from "./component/whychooseus2/Whychooseus2";
 import Work from "./component/work/Work";
+import './App.css'
 
 
 function App() {
