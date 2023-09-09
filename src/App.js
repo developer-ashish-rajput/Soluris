@@ -1,10 +1,15 @@
-
-
+import Service_list from "./services/Service_list";
+import Service_details from './services/Service_details'
+import './App.css'
 function App() {
   return (
-    <div className="App">
-      hi
-    </div>
+   <div>
+    <>
+     <Service_list/>
+
+     <Service_details/>
+     </>
+   </div>
   );
 }
 
