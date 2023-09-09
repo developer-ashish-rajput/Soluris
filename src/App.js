@@ -1,4 +1,6 @@
 import About from "./component/about/About";
+import Calltoaction from "./component/calltoaction/Calltoaction";
+import Footer from "./component/footer/Footer";
 import Main from "./component/main-slider/Main";
 import Service from "./component/service/Service";
 import Whychooseus from "./component/whychooseus/Whychooseus";
@@ -15,6 +17,8 @@ function App() {
       <Whychooseus />
       <Whychooseus2 />
       <Work />
+      <Calltoaction />
+      <Footer />
     </div>
   );
 }
