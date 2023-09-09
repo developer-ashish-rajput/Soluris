@@ -125,64 +125,7 @@ const Whychooseus = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-white pt-60">
-                <div className="auto-container">
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <div className="graph-box d-md-flex align-items-center justify-content-md-between wow fadeInRight animated" style={{ visibility: 'visible', animationName: 'fadeInRight' }}>
-                                {/* Pie Graph 1 */}
-                                <div className="pie-graph d-sm-flex align-items-center text-center text-sm-start mb-4 mb-md-0">
-                                    <div className="graph-outer">
-                                        <div style={{ display: 'inline', width: '125px', height: '125px' }}>
-                                            <canvas width="125" height="125"></canvas>
-                                            <input
-                                                type="text"
-                                                className="dial"
-                                                data-fgcolor="#87AB42"
-                                                data-bgcolor="#f9f9f9"
-                                                data-width="125"
-                                                data-height="125"
-                                                data-linecap="normal"
-                                                value="90"
-                                                readOnly="readonly"
-                                                style={{ display: 'none', width: '0px', visibility: 'hidden' }}
-                                            />
-                                        </div>
-                                        <div className="inner-text count-box counted">
-                                            <span className="count-text txt" data-stop="99" data-speed="2000">99</span>%
-                                        </div>
-                                    </div>
-                                    <h4 className="title mt-0 ms-4">Projects Completed</h4>
-                                </div>
-                                {/* Pie Graph 2 */}
-                                <div className="pie-graph d-sm-flex align-items-center text-center text-sm-start">
-                                    <div className="graph-outer">
-                                        <div style={{ display: 'inline', width: '125px', height: '125px' }}>
-                                            <canvas width="125" height="125"></canvas>
-                                            <input
-                                                type="text"
-                                                className="dial"
-                                                data-fgcolor="#87AB42"
-                                                data-bgcolor="#f9f9f9"
-                                                data-width="125"
-                                                data-height="125"
-                                                data-linecap="normal"
-                                                value="50"
-                                                readOnly="readonly"
-                                                style={{ display: 'none', width: '0px', visibility: 'hidden' }}
-                                            />
-                                        </div>
-                                        <div className="inner-text count-box counted">
-                                            <span className="count-text txt" data-stop="50" data-speed="2000">50</span>%
-                                        </div>
-                                    </div>
-                                    <h4 className="title mt-0 ms-4">Clients Satisfied</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
 
         </div>
 
