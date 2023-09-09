@@ -5,7 +5,7 @@ const Whychooseus = () => {
     return (
         <div>
             <section className="why-choose-us pb-lg-0">
-                <div className="bg-image" style={{ backgroundImage: 'url(images/icons/bg-pattern-1.png)' }}></div>
+                <div className="bg-image" ></div>
                 <div className="auto-container">
                     <div className="row">
                         {/* Content Column */}
