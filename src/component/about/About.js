@@ -1,4 +1,7 @@
 import React from 'react'
+import AboutHome1 from '../../images/about1-bg-home1.jpg'
+import About1 from '../../images/about-1.jpg'
+import About2 from '../../images/about-2.jpg'
 import "./About.css"
 
 const About = () => {
@@ -6,7 +9,7 @@ const About = () => {
         <section className="about-section-home1">
             <img
                 className="about-bg-home1"
-                src="./Soluris - Ecology & Solar HTML Template _ Home Page 01_files/about1-bg-home1.jpg"
+                src={AboutHome1}
                 alt=""
             />
             <div className="anim-icons">
@@ -51,10 +54,10 @@ const About = () => {
                     >
                         <div className="inner-column position-relative mr-10">
                             <figure className="image-1">
-                                <img src="./Soluris - Ecology & Solar HTML Template _ Home Page 01_files/about-1.jpg" alt="" />
+                                <img src={About1} alt="" />
                             </figure>
                             <figure className="image-2 bounce-x">
-                                <img src="./Soluris - Ecology & Solar HTML Template _ Home Page 01_files/about-2.jpg" alt="" />
+                                <img src={About2} alt="" />
                             </figure>
                         </div>
                     </div>

@@ -1,4 +1,8 @@
 import React from 'react'
+import Service1 from '../../images/service-1.jpg';
+import Service2 from '../../images/service-2.jpg';
+import Service3 from '../../images/service-3.jpg';
+import Service4 from '../../images/service-4.jpg';
 import "./service.css"
 
 const Service = () => {
@@ -22,7 +26,9 @@ const Service = () => {
                             </div>
                             <div className="image-box">
                                 <figure className="image">
-                                    <a href="https://kodesolution.com/html/2023/soluris-html/page-service-details.html"><img src="./Soluris - Ecology & Solar HTML Template _ Home Page 01_files/service-1.jpg" alt="" /></a>
+                                    <a href="https://kodesolution.com/html/2023/soluris-html/page-service-details.html"><img 
+                                    src={Service1}
+                                     alt="" /></a>
                                 </figure>
                             </div>
                         </div>
@@ -40,7 +46,7 @@ const Service = () => {
                             </div>
                             <div className="image-box">
                                 <figure className="image">
-                                    <a href="https://kodesolution.com/html/2023/soluris-html/page-service-details.html"><img src="./Soluris - Ecology & Solar HTML Template _ Home Page 01_files/service-2.jpg" alt="" /></a>
+                                    <a href="https://kodesolution.com/html/2023/soluris-html/page-service-details.html"><img src={Service2} alt="" /></a>
                                 </figure>
                             </div>
                         </div>
@@ -58,7 +64,7 @@ const Service = () => {
                             </div>
                             <div className="image-box">
                                 <figure className="image">
-                                    <a href="https://kodesolution.com/html/2023/soluris-html/page-service-details.html"><img src="./Soluris - Ecology & Solar HTML Template _ Home Page 01_files/service-3.jpg" alt="" /></a>
+                                    <a href="https://kodesolution.com/html/2023/soluris-html/page-service-details.html"><img src={Service3} alt="" /></a>
                                 </figure>
                             </div>
                         </div>
@@ -76,7 +82,7 @@ const Service = () => {
                             </div>
                             <div className="image-box">
                                 <figure className="image">
-                                    <a href="https://kodesolution.com/html/2023/soluris-html/page-service-details.html"><img src="./Soluris - Ecology & Solar HTML Template _ Home Page 01_files/service-4.jpg" alt="" /></a>
+                                    <a href="https://kodesolution.com/html/2023/soluris-html/page-service-details.html"><img src={Service4} alt="" /></a>
                                 </figure>
                             </div>
                         </div>

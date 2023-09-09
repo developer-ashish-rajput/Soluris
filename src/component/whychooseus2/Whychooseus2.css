@@ -9,6 +9,7 @@
   }
 }
 .why-choose-us-home1 .bg-image {
+  background-image: url(../../images/video.png) !important;
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
@@ -19,6 +20,7 @@
   z-index: 1;
 }
 .why-choose-us-home1 .bg-shape {
+  background-image: url(../../images/8.jpg);
   position: absolute;
   top: 0;
   left: 0;
