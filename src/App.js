@@ -21,6 +21,7 @@ function App() {
       <Whychooseus2 />
       <Work />
       <Calltoaction />
+      {/* Routing to be added here Please Note */}
       <Service_list />
       <Service_details />
       <Footer />
