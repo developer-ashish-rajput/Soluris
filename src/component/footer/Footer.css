@@ -1,0 +1,32 @@
+.main-footer {
+  position: relative;
+}
+.main-footer .bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: auto;
+  bottom: 80px;
+}
+.main-footer .bg-image:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  /* background-image: url(../images/background/overlay-footer.jpg); */
+  opacity: 0.9;
+  content: "";
+}
+.main-footer .contacts-outer {
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.main-footer.style-one {
+  padding-top: 90px;
+}

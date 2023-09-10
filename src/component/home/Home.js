@@ -5,16 +5,18 @@ import Service from '../service/Service';
 import Whychooseus from '../whychooseus/Whychooseus';
 import Whychooseus2 from '../whychooseus2/Whychooseus2';
 import Work from '../work/Work';
+import Calltoaction from '../calltoaction/Calltoaction';
 
 const Home = () => {
   return (
     <div>
-      <About />
       <Main />
+      <About />
       <Service />
       <Whychooseus />
       <Whychooseus2 />
       <Work />
+      <Calltoaction />
     </div>
   );
 };

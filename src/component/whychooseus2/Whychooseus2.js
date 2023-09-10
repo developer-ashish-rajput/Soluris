@@ -1,4 +1,5 @@
 import React from 'react'
+import VideoPng from '../../images/video.png'
 import "./Whychooseus2.css"
 
 const Whychooseus2 = () => {
@@ -40,7 +41,7 @@ const Whychooseus2 = () => {
                     </div>
                     {/* Image Column */}
                     <div className="image-column col-lg-6">
-                        <div className="image-box hide-desktop"><img src="./Soluris - Ecology & Solar HTML Template _ Home Page 01_files/video.png" alt="" /></div>
+                        <div className="image-box hide-desktop"><img src={VideoPng} alt="" /></div>
                         <div className="inner-column">
                             <div className="info-box bounce-y">
                                 <i className="icon flaticon-support"></i>

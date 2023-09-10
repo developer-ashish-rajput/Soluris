@@ -1,0 +1,83 @@
+.call-to-action {
+  position: relative;
+  padding: 200px 0 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+.call-to-action:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-theme-color3);
+  opacity: 0.5;
+  content: "";
+  pointer-events: none;
+}
+.call-to-action .outer-box {
+  position: relative;
+  padding-left: 270px;
+}
+.call-to-action .outer-box .sec-title .sub-title {
+  margin-bottom: 15px;
+}
+.call-to-action .outer-box .play-now {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: inline-block;
+}
+.call-to-action .outer-box .play-now .icon {
+  height: 120px;
+  width: 120px;
+  background-color: var(--bg-theme-color2);
+  color: #fff;
+  font-size: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 10px;
+}
+.call-to-action .outer-box .theme-btn {
+  margin-top: 35px;
+}
+.call-to-action .outer-box .highlighted {
+  position: relative;
+  z-index: 2;
+}
+.call-to-action .outer-box .highlighted:before {
+  position: absolute;
+  left: -10px;
+  top: 0;
+  height: 88px;
+  width: 260px;
+  /* background-image: url(../images/icons/object-2.png); */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+.call-to-action.style-two {
+  padding: 120px 0;
+}
+.call-to-action.style-two:before {
+  background-color: var(--bg-theme-color1);
+  opacity: 0.8;
+}
+.call-to-action.style-two:after {
+  display: none;
+}
+.call-to-action.style-two .outer-box {
+  padding: 0;
+}
