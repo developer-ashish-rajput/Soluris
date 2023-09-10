@@ -1,21 +1,25 @@
-import About from "./component/about/About";
-import Main from "./component/main-slider/Main";
-import Service from "./component/service/Service";
-import Whychooseus from "./component/whychooseus/Whychooseus";
-import Whychooseus2 from "./component/whychooseus2/Whychooseus2";
-import Work from "./component/work/Work";
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './component/home/Home';
+import Projectlist from './component/project-list';
+import Details from './component/project-details/Details';
+import Team from './component/team/Team';
+import Testimonial from './component/testimonials/Testimonial';
 
 function App() {
   return (
-    <div >
-      <Main />
-      <About />
-      <Service />
-      <Whychooseus />
-      <Whychooseus2 />
-      <Work />
-    </div>
+    <>
+      <Router>
+        {
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/project-list' element={<Projectlist />} />
+            <Route path='/project-details' element={<Details />} />
+            <Route path='/team' element={<Team />} />
+            <Route path='/testimonial' element={<Testimonial />} />
+          </Routes>
+        }
+      </Router>
+    </>
   );
 }
 
