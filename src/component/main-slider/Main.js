@@ -1,4 +1,6 @@
 import React from 'react';
+import img1 from '../../images/1.jpg'
+import img2 from '../../images/2.jpg'
 import './Main.css';
 
 const main = () => {
@@ -60,7 +62,7 @@ const main = () => {
                   }}
                 >
                   {' '}
-                  <img src='images/main-slider/1.jpg' alt='' className='rev-slidebg defaultimg' />
+                  <img src={img1} alt='' className='rev-slidebg defaultimg' />
                   <div className='tp-dottedoverlay on'></div>
                   <div
                     className='tp-bgimg defaultimg '
@@ -314,7 +316,7 @@ const main = () => {
                   }}
                 >
                   {' '}
-                  <img src='images/main-slider/2.jpg' alt='' className='rev-slidebg defaultimg' />
+                  <img src={img2} alt='' className='rev-slidebg defaultimg' />
                   <div className='tp-dottedoverlay on'></div>
                   <div
                     className='tp-bgimg defaultimg '

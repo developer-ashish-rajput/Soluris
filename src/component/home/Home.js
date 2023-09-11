@@ -6,10 +6,12 @@ import Whychooseus from '../whychooseus/Whychooseus';
 import Whychooseus2 from '../whychooseus2/Whychooseus2';
 import Work from '../work/Work';
 import Calltoaction from '../calltoaction/Calltoaction';
+// import Slide from '../slider/Slide';
 
 const Home = () => {
   return (
     <div>
+      {/* <Slide/> */}
       <Main />
       <About />
       <Service />
