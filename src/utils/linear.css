@@ -5,6 +5,7 @@
     url('../fonts/linearicons-free.ttf?4l2k0u') format('truetype'),
     url('../fonts/linearicons-free.woff?4l2k0u') format('woff'),
     url('../fonts/linearicons-free.svg?4l2k0u#linearicons-free') format('svg'); */
+    src: url(./fonts/linearicons-free.ttf);
 	font-weight: normal;
 	font-style: normal;
 }

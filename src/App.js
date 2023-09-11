@@ -4,15 +4,17 @@ import Projectlist from './component/project-list';
 import Details from './component/project-details/Details';
 import Team from './component/team/Team';
 import Testimonial from './component/testimonials/Testimonial';
-import './App.css'
+import './App.css';
 import Footer from './component/footer/Footer';
 import ServiceList from './services/ServiceList';
 import ServiceDetails from './services/ServiceDetails';
+import Header from './component/header/Header';
 
 function App() {
   return (
     <>
       <Router>
+        <Header />
         {
           <Routes>
             <Route path='/' element={<Home />} />

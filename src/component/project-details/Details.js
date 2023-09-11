@@ -6,8 +6,21 @@ import img_1 from '../../images/project-1.jpg';
 import img_2 from '../../images/project-2.jpg';
 import img_3 from '../../images/project-3.jpg';
 import img_4 from '../../images/project-4.jpg';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { Project, ProjectWrapper, projects } from '../project-list';
 
 const Details = () => {
+  let settings = {
+    autoplay: true,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
+
   const carouselStyle = {
     visibility: 'visible',
     animationName: 'fadeInUp',
@@ -165,121 +178,14 @@ const Details = () => {
             <h2>Our Latest Projects</h2>
           </div>
           {/* Project Carousel */}
-          <div
-            className='project-carousel owl-carousel owl-theme wow fadeInUp owl-loaded owl-drag animated'
-            style={carouselStyle}
-          >
-            {/* Project Blocks go here */}
-            <div className='owl-stage-outer owl-height' style={stageOuterStyle}>
-              <div className='owl-stage' style={stageStyle}>
-                <div className='owl-item cloned' style={{ width: '294.75px', marginRight: '20px' }}>
-                  <div className='project-block'>
-                    <div className='inner-box'>
-                      <div className='image-box'>
-                        <figure className='image'>
-                          <a href='#' className='lightbox-image'>
-                            <img src={img_1} alt='' />
-                          </a>
-                        </figure>
-                        <a href='page-project-details.html' className='icon'>
-                          <i className='fa fa-plus'></i>
-                        </a>
-                      </div>
-                      <div className='content-box'>
-                        <span className='sub-title'>Solar Energy</span>
-                        <h4 className='title'>
-                          <a href='page-project-details.html'>Maximizing Solar ROI</a>
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div className='owl-item cloned' style={{ width: '294.75px', marginRight: '20px' }}>
-                  <div className='project-block'>
-                    <div className='inner-box'>
-                      <div className='image-box'>
-                        <figure className='image'>
-                          <a href='#' className='lightbox-image'>
-                            <img src={img_2} alt='' />
-                          </a>
-                        </figure>
-                        <a href='page-project-details.html' className='icon'>
-                          <i className='fa fa-plus'></i>
-                        </a>
-                      </div>
-                      <div className='content-box'>
-                        <span className='sub-title'>Solar Energy</span>
-                        <h4 className='title'>
-                          <a href='page-project-details.html'>The Benefits of Solar</a>
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className='owl-item cloned' style={{ width: '294.75px', marginRight: '20px' }}>
-                  <div className='project-block'>
-                    <div className='inner-box'>
-                      <div className='image-box'>
-                        <figure className='image'>
-                          <a href='#' className='lightbox-image'>
-                            <img src={img_3} alt='' />
-                          </a>
-                        </figure>
-                        <a href='page-project-details.html' className='icon'>
-                          <i className='fa fa-plus'></i>
-                        </a>
-                      </div>
-                      <div className='content-box'>
-                        <span className='sub-title'>Solar Energy</span>
-                        <h4 className='title'>
-                          <a href='page-project-details.html'>Shining a Light</a>
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className='owl-item cloned' style={{ width: '294.75px', marginRight: '20px' }}>
-                  <div className='project-block'>
-                    <div className='inner-box'>
-                      <div className='image-box'>
-                        <figure className='image'>
-                          <a href='#' className='lightbox-image'>
-                            <img src={img_4} alt='' />
-                          </a>
-                        </figure>
-                        <a href='page-project-details.html' className='icon'>
-                          <i className='fa fa-plus'></i>
-                        </a>
-                      </div>
-                      <div className='content-box'>
-                        <span className='sub-title'>Solar Energy</span>
-                        <h4 className='title'>
-                          <a href='page-project-details.html'>Diversifying Your Solar</a>
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className='owl-nav disabled'>
-                  <div className='owl-prev'>
-                    <span className='fa fa-long-arrow-alt-left'></span>
-                  </div>
-                  <div className='owl-next'>
-                    <span className='fa fa-long-arrow-alt-right'></span>
-                  </div>
-                </div>
-                <div className='owl-dots disabled'>
-                  <div className='owl-dot active'>
-                    <span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ProjectWrapper>
+            <Slider {...settings}>
+              {projects.map((project, index) => (
+                <Project key={index} project={project} />
+              ))}
+            </Slider>
+          </ProjectWrapper>
         </div>
       </section>
     </div>

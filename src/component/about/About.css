@@ -59,7 +59,7 @@
 .about-section-home1 .image-1:before {
   background-color: var(--theme-color1);
   bottom: -40px;
-  content: "";
+  content: '';
   height: 20px;
   left: 0;
   position: absolute;
@@ -85,4 +85,8 @@
   .about-section-home1 .image-column {
     margin-bottom: 100px;
   }
+}
+
+.icon img {
+  width: 45%;
 }
