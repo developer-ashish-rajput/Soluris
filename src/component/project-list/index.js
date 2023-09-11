@@ -6,7 +6,7 @@ import img_2 from '../../images/project-2.jpg';
 import img_3 from '../../images/project-3.jpg';
 import img_4 from '../../images/project-4.jpg';
 
-const projects = [
+export const projects = [
   {
     title: 'Maximizing Solar ROI',
     sub_title: 'Solar Energy',
@@ -29,9 +29,9 @@ const projects = [
   },
 ];
 
-const Project = ({ project }) => {
+export const Project = ({ project }) => {
   return (
-    <div className='col-xl-3 col-sm-6'>
+    <div className='col-12'>
       <div className='project-block mb-30'>
         <div className='inner-box'>
           <div className='image-box'>
@@ -56,6 +56,16 @@ const Project = ({ project }) => {
   );
 };
 
+export const ProjectWrapper = ({ children }) => {
+  return (
+    <section className='project-section pb-40'>
+      <div className='large-container'>
+        <div className='row wow fadeInUp animated'>{children}</div>
+      </div>
+    </section>
+  );
+};
+
 const Projectlist = () => {
   return (
     <div className='page-wrapper'>
@@ -73,15 +83,11 @@ const Projectlist = () => {
         </div>
       </section>
 
-      <section className='project-section pb-90'>
-        <div className='large-container'>
-          <div className='row wow fadeInUp animated'>
-            {projects.map((project, index) => (
-              <Project key={index} project={project} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProjectWrapper>
+        {projects.map((project, index) => (
+          <Project key={index} project={project} />
+        ))}
+      </ProjectWrapper>
     </div>
   );
 };
