@@ -31,7 +31,7 @@ export const projects = [
 
 export const Project = ({ project }) => {
   return (
-    <div className='col-12'>
+    <div className='col-xl-3 col-sm-6'>
       <div className='project-block mb-30'>
         <div className='inner-box'>
           <div className='image-box'>
