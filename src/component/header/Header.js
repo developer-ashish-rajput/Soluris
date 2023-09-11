@@ -41,7 +41,7 @@ const Header = () => {
     if (pathname === '/') {
       window.addEventListener('scroll', () => {
         console.log('object');
-        if (window.scrollY > 100) {
+        if (window.scrollY > 10) {
           setShowTopBtn(true);
         } else {
           setShowTopBtn(false);
