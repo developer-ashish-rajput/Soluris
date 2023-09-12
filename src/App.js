@@ -8,13 +8,16 @@ import './App.css';
 import Footer from './component/footer/Footer';
 import ServiceList from './services/ServiceList';
 import ServiceDetails from './services/ServiceDetails';
-import Header from './component/header/Header';
+// import Header from './component/header/Header';
+import Contact from './component/contact/Contact';
+import Header1 from './component/header/Header1';
 
 function App() {
   return (
     <>
       <Router>
-        <Header />
+        {/* <Header /> */}
+        <Header1 />
         {
           <Routes>
             <Route path='/' element={<Home />} />
@@ -24,6 +27,7 @@ function App() {
             <Route path='/project-details' element={<Details />} />
             <Route path='/team' element={<Team />} />
             <Route path='/testimonial' element={<Testimonial />} />
+            <Route path='/contact' element={<Contact />} />
           </Routes>
         }
         <Footer />

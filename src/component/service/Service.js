@@ -24,16 +24,16 @@ const Service = () => {
                 <i className='icon flaticon-wind-energy-1'></i>
                 <span className='sub-title'>01 Service</span>
                 <h4 className='title'>
-                  <a href='https://kodesolution.com/html/2023/soluris-html/page-service-details.html'>Wind Turbines</a>
+                  <a href='#'>Wind Turbines</a>
                 </h4>
                 <div className='text'>Hybrid energy refers to the use of multiple sources ...</div>
-                <a href='https://kodesolution.com/html/2023/soluris-html/index.html' className='read-more'>
+                <a href='#' className='read-more'>
                   <i className='fa fa-chevron-right'></i>
                 </a>
               </div>
               <div className='image-box'>
                 <figure className='image'>
-                  <a href='https://kodesolution.com/html/2023/soluris-html/page-service-details.html'>
+                  <a href='#'>
                     <img src={Service1} alt='' />
                   </a>
                 </figure>
@@ -52,16 +52,16 @@ const Service = () => {
                 <i className='icon flaticon-settings-2'></i>
                 <span className='sub-title'>02 Service</span>
                 <h4 className='title'>
-                  <a href='https://kodesolution.com/html/2023/soluris-html/page-service-details.html'>Maintenance</a>
+                  <a href='#'>Maintenance</a>
                 </h4>
                 <div className='text'>Wind turbines are devices that convert wind energy ...</div>
-                <a href='https://kodesolution.com/html/2023/soluris-html/index.html' className='read-more'>
+                <a href='#' className='read-more'>
                   <i className='fa fa-chevron-right'></i>
                 </a>
               </div>
               <div className='image-box'>
                 <figure className='image'>
-                  <a href='https://kodesolution.com/html/2023/soluris-html/page-service-details.html'>
+                  <a href='#'>
                     <img src={Service2} alt='' />
                   </a>
                 </figure>
@@ -80,18 +80,16 @@ const Service = () => {
                 <i className='icon flaticon-windmill'></i>
                 <span className='sub-title'>03 Service</span>
                 <h4 className='title'>
-                  <a href='https://kodesolution.com/html/2023/soluris-html/page-service-details.html'>
-                    Wind Generators
-                  </a>
+                  <a href='#'>Wind Generators</a>
                 </h4>
                 <div className='text'>Wind generators are devices that harness the ...</div>
-                <a href='https://kodesolution.com/html/2023/soluris-html/index.html' className='read-more'>
+                <a href='#' className='read-more'>
                   <i className='fa fa-chevron-right'></i>
                 </a>
               </div>
               <div className='image-box'>
                 <figure className='image'>
-                  <a href='https://kodesolution.com/html/2023/soluris-html/page-service-details.html'>
+                  <a href='#'>
                     <img src={Service3} alt='' />
                   </a>
                 </figure>
@@ -110,18 +108,16 @@ const Service = () => {
                 <i className='icon flaticon-solar-panel'></i>
                 <span className='sub-title'>04 Service</span>
                 <h4 className='title'>
-                  <a href='https://kodesolution.com/html/2023/soluris-html/page-service-details.html'>
-                    Solar PV Systems
-                  </a>
+                  <a href='#'>Solar PV Systems</a>
                 </h4>
                 <div className='text'>A Solar PV (photovoltaic) system is a type of ...</div>
-                <a href='https://kodesolution.com/html/2023/soluris-html/index.html' className='read-more'>
+                <a href='#' className='read-more'>
                   <i className='fa fa-chevron-right'></i>
                 </a>
               </div>
               <div className='image-box'>
                 <figure className='image'>
-                  <a href='https://kodesolution.com/html/2023/soluris-html/page-service-details.html'>
+                  <a href='#'>
                     <img src={Service4} alt='' />
                   </a>
                 </figure>
