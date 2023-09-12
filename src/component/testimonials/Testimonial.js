@@ -56,7 +56,7 @@ const Testimonial = ({ testimonial }) => {
 const TestimonialSection = () => {
   return (
     <div className='page-wrapper'>
-      <section className='page-title'>
+      <section className='page-title page-banner'>
         <div className='auto-container'>
           <div className='title-outer text-center'>
             <h1 className='title'>Testimonial</h1>

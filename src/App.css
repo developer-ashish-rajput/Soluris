@@ -39,3 +39,7 @@
     transform: rotate(360deg);
   }
 }
+
+.page-banner{
+  padding-top: 150px !important; 
+}

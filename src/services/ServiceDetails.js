@@ -3,16 +3,17 @@ import './ServiceDetails.css'
 import details_img1 from '../images/service-details.jpg'
 import details_img2 from '../images/service-d1.jpg'
 import details_img3 from '../images/service-d2.jpg'
+import { NavLink } from 'react-router-dom'
 
 const ServiceDetails = () => {
   return (
     <>
-    <section className="page-title">
+    <section className="page-title page-banner">
 		<div className="auto-container">
 			<div className="title-outer text-center">
 				<h1 className="title">Service Details</h1>
 				<ul className="page-breadcrumb">
-					<li><a href="https://kodesolution.com/html/2023/soluris-html/index.html">Home</a></li>
+					<li><NavLink to="/">Home</NavLink></li>
 					<li>Services</li>
 				</ul>
 			</div>
