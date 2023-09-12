@@ -58,7 +58,7 @@ export const Project = ({ project }) => {
 
 export const ProjectWrapper = ({ children }) => {
   return (
-    <section className='project-section pb-40'>
+    <section className='project-section pt-5 pb-40'>
       <div className='large-container'>
         <div className='row wow fadeInUp animated'>{children}</div>
       </div>
@@ -69,7 +69,7 @@ export const ProjectWrapper = ({ children }) => {
 const Projectlist = () => {
   return (
     <div className='page-wrapper'>
-      <section className='page-title'>
+      <section className='page-title page-banner'>
         <div className='auto-container'>
           <div className='title-outer text-center'>
             <h1 className='title'>Projects</h1>

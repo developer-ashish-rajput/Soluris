@@ -52,7 +52,7 @@ const Details = () => {
         </div>
       </section>
 
-      <section className='project-details'>
+      <section className='project-details page-banner'>
         <div className='container'>
           <div className='row'>
             <div className='col-xl-12'>

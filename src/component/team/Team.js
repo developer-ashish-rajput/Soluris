@@ -4,7 +4,7 @@ import team_1 from '../../images/team-1.jpg';
 import team_2 from '../../images/team-2.jpg';
 import team_3 from '../../images/team-3.jpg';
 import team_4 from '../../images/team-4.jpg';
-
+// import './Team.css'
 const teamMembers = [
   {
     name: 'Kevin Hardson',
@@ -79,7 +79,7 @@ const TeamMember = ({ teamMember }) => {
 const Team = () => {
   return (
     <div className='page-wrapper'>
-      <section className='page-title'>
+      <section className='page-title page-banner'>
         <div className='auto-container'>
           <div className='title-outer text-center'>
             <h1 className='title'>Team Grid</h1>

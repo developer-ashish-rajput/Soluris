@@ -50,7 +50,7 @@ const Header = () => {
     }
   }, [pathname]);
 
-  console.log({ showTopBtn });
+  console.log({ showTopBtn });    
 
   return (
     <header className={`sticky-header ${showTopBtn ? 'visible' : 'hidden'}`}>
@@ -100,7 +100,68 @@ const Header = () => {
                               About
                             </a>
                           </li>
+                          {/* placeholder for service menu*/}
+                          <li>
+                            {}
+                          </li>
+                         
                           <li className='dropdown'>
+                            <NavLink className={!showTopBtn ? 'nav-item-default' : 'nav-item-main'} to='/testimonial'>
+                              Testimonial
+                            </NavLink>
+                          </li>
+                          <li className='dropdown'>
+                            <NavLink className={!showTopBtn ? 'nav-item-default' : 'nav-item-main'} to='/team'>
+                              Team
+                            </NavLink>
+                          </li>
+                          <li className='dropdown'>
+                            <NavLink className={!showTopBtn ? 'nav-item-default' : 'nav-item-main'} to='/service-list'>
+                              Services
+                            </NavLink>
+                          </li>
+                          <li className='dropdown'>
+                            <NavLink
+                              className={!showTopBtn ? 'nav-item-default' : 'nav-item-main'}
+                              to='/project-list'
+                            >
+                              Projects
+                            </NavLink>
+                          </li>
+                          <li className='dropdown'>
+                            <a className={!showTopBtn ? 'nav-item-default' : 'nav-item-main'} href='/#contact'>
+                              Contact
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className='header-right d-flex align-items-center'>
+                      <div className='horizontal-bar'></div>
+                      <div className='mobile-nav-bar d-block ml-3 ml-sm-5 d-xl-none'>
+                        <div className='mobile-nav-wrap'>
+                          {!isDesktop && !showTopBtn && <TemporaryDrawer isMobile={!isDesktop} />}
+                          {!isDesktop && showTopBtn && <TemporaryDrawer />}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
+
+const ServiceMenu=({showTopBtn})=>{
+  return(
+     <li className='dropdown'>
                             <a className={!showTopBtn ? 'nav-item-default' : 'nav-item-main'} href='/#services'>
                               Our Services<i className='bi bi-caret-down-fill'></i>
                             </a>
@@ -181,57 +242,6 @@ const Header = () => {
                                 </li>
                               </li>
                             </ul>
-                          </li>
-                          <li className='dropdown'>
-                            <NavLink className={!showTopBtn ? 'nav-item-default' : 'nav-item-main'} to='/portfolio'>
-                              Portfolio
-                            </NavLink>
-                          </li>
-                          <li className='dropdown'>
-                            <NavLink className={!showTopBtn ? 'nav-item-default' : 'nav-item-main'} to='/team'>
-                              Team
-                            </NavLink>
-                          </li>
-                          <li className='dropdown'>
-                            <NavLink className={!showTopBtn ? 'nav-item-default' : 'nav-item-main'} to='/staff-ops'>
-                              Staff OPS
-                            </NavLink>
-                          </li>
-                          <li className='dropdown'>
-                            <NavLink
-                              className={!showTopBtn ? 'nav-item-default' : 'nav-item-main'}
-                              to='/affiliate-partner'
-                            >
-                              Affiliate
-                            </NavLink>
-                          </li>
-                          <li className='dropdown'>
-                            <a className={!showTopBtn ? 'nav-item-default' : 'nav-item-main'} href='/#contact'>
-                              Contact
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className='header-right d-flex align-items-center'>
-                      <div className='horizontal-bar'></div>
-                      <div className='mobile-nav-bar d-block ml-3 ml-sm-5 d-xl-none'>
-                        <div className='mobile-nav-wrap'>
-                          {!isDesktop && !showTopBtn && <TemporaryDrawer isMobile={!isDesktop} />}
-                          {!isDesktop && showTopBtn && <TemporaryDrawer />}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
-      </div>
-    </header>
-  );
-};
-
-export default Header;
+                          </li> 
+  )
+}

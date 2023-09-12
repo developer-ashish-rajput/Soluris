@@ -6,7 +6,7 @@ import './About.css';
 
 const About = () => {
   return (
-    <section className='about-section-home1'>
+    <section id='about' className='about-section-home1'>
       <img className='about-bg-home1' src={AboutHome1} alt='' />
       <div className='anim-icons'>
         <div
