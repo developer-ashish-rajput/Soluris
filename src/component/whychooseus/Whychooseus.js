@@ -119,6 +119,7 @@ const Whychooseus = () => {
                         value='90'
                         readOnly='readonly'
                         style={{ display: 'none', width: '0px', visibility: 'hidden' }}
+                        onChange={()=>{}}
                       />
                     </div>
                     <div className='inner-text count-box counted'>
@@ -146,6 +147,7 @@ const Whychooseus = () => {
                         value='50'
                         readOnly='readonly'
                         style={{ display: 'none', width: '0px', visibility: 'hidden' }}
+                        onChange={()=>{}}
                       />
                     </div>
                     <div className='inner-text count-box counted'>

@@ -1,6 +1,8 @@
-@import url(./styles/style.css);
+/* @import url(./styles/style.css); */
 @import url(./styles/styles.css);
-
+html{
+  overflow-x: hidden !important;
+}
 .App {
   text-align: center;
 }

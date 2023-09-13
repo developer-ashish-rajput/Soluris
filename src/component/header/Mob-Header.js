@@ -59,7 +59,7 @@ export default function TemporaryDrawer({ isMobile }) {
         style={{
           minWidth: '250px',
         }}
-        disableScrollLock='false'
+        disableScrollLock={false}
         anchor={'right'}
         open={state}
         onClose={() => toggleDrawer(false)}

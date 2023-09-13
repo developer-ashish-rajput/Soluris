@@ -27,7 +27,7 @@ const Header = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   // Sticky Menu Area
   useEffect(() => {
-    if (pathname !== '/') {
+    if (pathname !== '/' || '') {
       window.addEventListener('scroll', () => {
         if (window.scrollY > -10) {
           setShowTopBtn(true);
@@ -38,10 +38,10 @@ const Header = () => {
       return setShowTopBtn(true);
     }
 
-    if (pathname === '/') {
+    if (pathname === '/' || '') {
       window.addEventListener('scroll', () => {
         console.log('object');
-        if (window.scrollY > 10) {
+        if (window.scrollY > 5) {
           setShowTopBtn(true);
         } else {
           setShowTopBtn(false);
@@ -50,10 +50,14 @@ const Header = () => {
     }
   }, [pathname]);
 
+  useEffect(()=>{
+    // setShowTopBtn(true);
+  },[])
+
   console.log({ showTopBtn });    
 
   return (
-    <header className={`sticky-header ${showTopBtn ? 'visible' : 'hidden'}`}>
+    <header className={` ${showTopBtn ? 'visible' : 'hidden'}`}>
       <div className='company-logo'>
         <header className='header header-1 transparent header-2'>
           <div id='header' className={showTopBtn ? `main-header-wraper` : !isDesktop ? `py-3 headerbg` : 'headerbg'}>

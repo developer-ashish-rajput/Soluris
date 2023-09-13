@@ -5,7 +5,7 @@ import './Main.css';
 
 const main = () => {
   return (
-    <div>
+    <>
       <section className='main-slider'>
         <div
           className='rev_slider_wrapper fullwidthbanner-container tp-mouseover'
@@ -576,7 +576,7 @@ const main = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

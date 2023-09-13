@@ -8474,7 +8474,7 @@ Page Title
 ====================================================================
 
 ***/
-@-webkit-keyframes "ripple" {
+/* @-webkit-keyframes "ripple" {
   70% {
     -webkit-box-shadow: 0 0 0 70px rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 70px rgba(255, 255, 255, 0);
@@ -8493,7 +8493,7 @@ Page Title
     -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
-}
+} */
 .page-title {
   position: relative;
   background-repeat: no-repeat;

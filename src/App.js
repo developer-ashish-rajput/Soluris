@@ -4,7 +4,7 @@ import Projectlist from './component/project-list';
 import Details from './component/project-details/Details';
 import Team from './component/team/Team';
 import Testimonial from './component/testimonials/Testimonial';
-import './App.css';
+import './App.css'
 import Footer from './component/footer/Footer';
 import ServiceList from './services/ServiceList';
 import ServiceDetails from './services/ServiceDetails';
@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
+    <Header />
         {
           <Routes>
             <Route path='/' element={<Home />} />
