@@ -36,13 +36,13 @@ export const Project = ({ project }) => {
         <div className='inner-box'>
           <div className='image-box'>
             <figure className='image'>
-              <a href='#' className='lightbox-image'>
+              <NavLink to='/project-details' className='lightbox-image'>
                 <img src={project.image} alt={project.title} />
-              </a>
+              </NavLink>
             </figure>
-            <a href='#' className='icon'>
+            <NavLink to='/project-details' className='icon'>
               <i className='fa fa-plus'></i>
-            </a>
+            </NavLink>
           </div>
           <div className='content-box'>
             <span className='sub-title'>{project.sub_title}</span>

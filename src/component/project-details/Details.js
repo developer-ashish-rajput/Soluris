@@ -17,7 +17,7 @@ const Details = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 1,
     slidesToScroll: 1,
   };
 
@@ -38,7 +38,7 @@ const Details = () => {
 
   return (
     <div className='page-wrapper'>
-      <section className='page-title'>
+      <section className='page-title page-banner'>
         <div className='auto-container'>
           <div className='title-outer text-center'>
             <h1 className='title'>Portfolio Details</h1>
@@ -52,7 +52,7 @@ const Details = () => {
         </div>
       </section>
 
-      <section className='project-details page-banner'>
+      <section className='project-details'>
         <div className='container'>
           <div className='row'>
             <div className='col-xl-12'>

@@ -4,7 +4,7 @@ import './Whychooseus.css';
 const Whychooseus = () => {
   return (
     <div>
-      <section id="contact" className='why-choose-us pb-lg-0'>
+      <section id='contact' className='why-choose-us pb-lg-0'>
         <div className='bg-image'></div>
         <div className='auto-container'>
           <div className='row'>

@@ -59,7 +59,7 @@ const Banner = () => {
 
                       <div className='theme-btn__wrapper d-flex justify-content-center'>
                         <Slide direction='left'>
-                          <Button text='Discober More' action='/#' />
+                          <Button text='Discover More' action='/#' />
                         </Slide>
                       </div>
                     </div>
