@@ -4,6 +4,7 @@ import client_1 from '../../images/client1.jpg';
 import client_2 from '../../images/client2.jpg';
 import client_3 from '../../images/client3.jpg';
 import icon_testi from '../../images/icon_tesimonial.png';
+import { gql, useQuery } from '@apollo/client';
 
 const testimonials = [
   {
@@ -26,12 +27,15 @@ const testimonials = [
   },
 ];
 
-const Testimonial = ({ testimonial }) => {
+const Testimonial = ({ data }) => {
+  const testimonial = data?.attributes;
+  const image = testimonial?.client_image?.data?.attributes?.url;
+  console.log(image);
   return (
     <div className='col-lg-4 col-sm-6'>
       <div className='testimonial-block-two'>
         <div className='inner-content'>
-          <div className='text'>{testimonial.text}</div>
+          <div className='text'>{testimonial?.comments}</div>
           <div className='reviews'>
             <div className='stars'></div>
           </div>
@@ -41,11 +45,11 @@ const Testimonial = ({ testimonial }) => {
         </div>
         <div className='img-content d-flex align-items-end'>
           <div className='testi-img'>
-            <img src={testimonial.image} alt='' />
+            <img src={image} alt='' />
           </div>
           <div className='testi-holder ml-15'>
-            <div className='text'>{testimonial.role}</div>
-            <h5 className='my-0'>{testimonial.name}</h5>
+            <div className='text'>{testimonial?.client_designation}</div>
+            <h5 className='my-0'>{testimonial?.client_name}</h5>
           </div>
         </div>
       </div>
@@ -53,7 +57,31 @@ const Testimonial = ({ testimonial }) => {
   );
 };
 
+const TESTIMONIAL_QUERY = gql`
+  query GetTestimonial {
+    testimonials {
+      data {
+        attributes {
+          client_name
+          client_designation
+          comments
+          client_rating
+          client_image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 const TestimonialSection = () => {
+  const { loading, data, error } = useQuery(TESTIMONIAL_QUERY);
+
   return (
     <div className='page-wrapper'>
       <section className='page-title page-banner'>
@@ -76,8 +104,8 @@ const TestimonialSection = () => {
         </div>
         <div className='auto-container'>
           <div className='row'>
-            {testimonials.map((testimonial, index) => (
-              <Testimonial key={index} testimonial={testimonial} />
+            {data?.testimonials?.data?.map((testimonial, index) => (
+              <Testimonial key={index} data={testimonial} />
             ))}
           </div>
         </div>

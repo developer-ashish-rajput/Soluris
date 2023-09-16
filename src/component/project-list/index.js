@@ -6,7 +6,7 @@ import img_2 from '../../images/project-2.jpg';
 import img_3 from '../../images/project-3.jpg';
 import img_4 from '../../images/project-4.jpg';
 
-import {gql, useQuery}  from '@apollo/client';
+import { gql, useQuery } from '@apollo/client';
 
 export const projects = [
   {
@@ -33,38 +33,37 @@ export const projects = [
 
 const PROJECTS = gql`
   query GetProjects {
-  projects{
-    data{
-      id
-      attributes{
-        image{
-          data{
-            attributes{
-              url,
-              previewUrl,
-              width,
-              height,
-              size
+    projects {
+      data {
+        id
+        attributes {
+          image {
+            data {
+              attributes {
+                url
+                previewUrl
+                width
+                height
+                size
+              }
             }
           }
-        },
-        title,
-        sub_title,
-        description,
-        ClientDetails{
-          date,
-          name,
-          url,
-          location
+          title
+          sub_title
+          description
+          ClientDetails {
+            date
+            name
+            url
+            location
+          }
         }
       }
     }
   }
-}
-`
+`;
 
 export const Project = ({ project }) => {
-
   return (
     <div className='col-xl-3 col-sm-6'>
       <div className='project-block mb-30'>
@@ -102,9 +101,6 @@ export const ProjectWrapper = ({ children }) => {
 };
 
 const Projectlist = () => {
-
-
- 
   return (
     <div className='page-wrapper'>
       <section className='page-title page-banner'>
@@ -121,21 +117,22 @@ const Projectlist = () => {
         </div>
       </section>
 
-<ProjectItems />
-      
+      <ProjectItems />
     </div>
   );
 };
 
 export const ProjectItems = () => {
-  const { loading, error, data}  = useQuery(PROJECTS);
+  const { loading, error, data } = useQuery(PROJECTS);
 
   console.log(data?.projects);
-  return (<ProjectWrapper>
-    {data?.projects?.data?.map((project, index) => (
-      <Project key={index} project={project} />
-    ))}
-  </ProjectWrapper>)
-}
+  return (
+    <ProjectWrapper>
+      {data?.projects?.data?.map((project, index) => (
+        <Project key={index} project={project} />
+      ))}
+    </ProjectWrapper>
+  );
+};
 
 export default Projectlist;

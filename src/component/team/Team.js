@@ -4,7 +4,10 @@ import team_1 from '../../images/team-1.jpg';
 import team_2 from '../../images/team-2.jpg';
 import team_3 from '../../images/team-3.jpg';
 import team_4 from '../../images/team-4.jpg';
+import gql from 'graphql-tag';
+import { useQuery } from '@apollo/client';
 // import './Team.css'
+
 const teamMembers = [
   {
     name: 'Kevin Hardson',
@@ -38,7 +41,10 @@ const teamMembers = [
   },
 ];
 
-const TeamMember = ({ teamMember }) => {
+const TeamMember = ({ data }) => {
+  const teamMember = data?.attributes;
+  const image = teamMember?.image?.data?.attributes?.url;
+
   return (
     <div className='col-lg-4 col-sm-6'>
       <div className='team-block'>
@@ -46,7 +52,7 @@ const TeamMember = ({ teamMember }) => {
           <div className='image-box'>
             <figure className='image'>
               <a href='#'>
-                <img src={teamMember.image} alt={teamMember.name} />
+                <img src={image} alt={teamMember.name} />
               </a>
             </figure>
           </div>
@@ -54,18 +60,18 @@ const TeamMember = ({ teamMember }) => {
             <h4 className='name'>
               <a href='#'>{teamMember.name}</a>
             </h4>
-            <span className='designation'>{teamMember.role}</span>
+            <span className='designation'>{teamMember.designation}</span>
             <div className='social-links'>
-              <a href='#'>
+              <a href={teamMember?.facebook_url}>
                 <i className='fab fa-facebook-f'></i>
               </a>
-              <a href='#'>
+              <a href={teamMember?.twitter_url}>
                 <i className='fab fa-twitter'></i>
               </a>
-              <a href='#'>
-                <i className='fab fa-instagram'></i>
+              <a href={teamMember?.linkedin_url}>
+                <i className='fab fa-linkedin'></i>
               </a>
-              <a href='#'>
+              <a href={teamMember?.pintrest_url}>
                 <i className='fab fa-pinterest-p'></i>
               </a>
             </div>
@@ -76,7 +82,33 @@ const TeamMember = ({ teamMember }) => {
   );
 };
 
+const TEAMS_QUERY = gql`
+  query GetTeam {
+    teams {
+      data {
+        attributes {
+          name
+          desgination
+          facebook_url
+          twitter_url
+          pintrest_url
+          linkedin_url
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 const Team = () => {
+  const { data, loading, error } = useQuery(TEAMS_QUERY);
+  console.log(data);
   return (
     <div className='page-wrapper'>
       <section className='page-title page-banner'>
@@ -96,8 +128,8 @@ const Team = () => {
       <section className='team-section'>
         <div className='auto-container'>
           <div className='row'>
-            {teamMembers.map((teamMember, index) => (
-              <TeamMember key={index} teamMember={teamMember} />
+            {data?.teams?.data?.map((teamMember, index) => (
+              <TeamMember key={index} data={teamMember} />
             ))}
           </div>
         </div>
