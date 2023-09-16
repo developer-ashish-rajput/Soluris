@@ -1,8 +1,59 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo-2.png';
+import $ from 'jquery';
 
 const Header1 = () => {
+
+  	//Update Header Style and Scroll to Top
+		function headerStyle() {
+			if($('.main-header').length){
+				var windowpos = $(window).scrollTop();
+				var siteHeader = $('.header-style-one');
+				var scrollLink = $('.scroll-to-top');
+				var sticky_header = $('.main-header .sticky-header');
+				if (windowpos > 100) {
+					sticky_header.addClass("fixed-header animated slideInDown");
+					scrollLink.fadeIn(300);
+				}else {
+					sticky_header.removeClass("fixed-header animated slideInDown");
+					scrollLink.fadeOut(300);
+				}
+				if (windowpos > 1) {
+					siteHeader.addClass("fixed-header");
+				}else {
+					siteHeader.removeClass("fixed-header");
+				}
+			}
+		}
+
+    
+
+  useEffect(() => {
+    headerStyle();
+
+    //Submenu Dropdown Toggle
+		if($('.main-header li.dropdown ul').length){
+			$('.main-header .navigation li.dropdown').append('<div class="dropdown-btn"><i class="fa fa-angle-down"></i></div>');
+		}
+  
+  }, [])
+
+  let body = $('body');
+  function renderMobileMenu() {
+    //  $(body).toggleClass('mobile-menu-visible')
+  // setTimeout(() => {
+    body?.toggleClass('mobile-menu-visible')
+    // console.log("Hello");
+  }
+  
+
+  useEffect(() => {
+    if(body)
+      (renderMobileMenu());
+  }, [body])
+  
+
   return (
     <header className='main-header header-style-one fixed-header'>
       {/* Header Top */}
@@ -106,7 +157,7 @@ const Header1 = () => {
               </a>
 
               {/* Mobile Nav Toggler */}
-              <div className='mobile-nav-toggler'>
+              <div className='mobile-nav-toggler mobile-menu-visible' onClick={renderMobileMenu}>
                 <span className='icon lnr-icon-bars'></span>
               </div>
             </div>
@@ -126,7 +177,7 @@ const Header1 = () => {
                 <img src='images/logo-2.png' alt='' title='Fesho' />
               </a>
             </div>
-            <div className='close-btn'>
+            <div className='close-btn' onClick={renderMobileMenu}>
               <i className='icon fa fa-times'></i>
             </div>
           </div>
@@ -301,8 +352,8 @@ const Header1 = () => {
               </nav>
               {/* Main Menu End */}
               {/* Mobile Navigation Toggler */}
-              <div className='mobile-nav-toggler'>
-                <span className='icon lnr-icon-bars'></span>
+              <div className='mobile-nav-toggler' onClick={renderMobileMenu} >
+                <span className='icon lnr-icon-bars' ></span>
               </div>
             </div>
           </div>
