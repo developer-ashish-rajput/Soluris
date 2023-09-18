@@ -1,58 +1,53 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo-2.png';
 import $ from 'jquery';
 
 const Header1 = () => {
-
-  	//Update Header Style and Scroll to Top
-		function headerStyle() {
-			if($('.main-header').length){
-				var windowpos = $(window).scrollTop();
-				var siteHeader = $('.header-style-one');
-				var scrollLink = $('.scroll-to-top');
-				var sticky_header = $('.main-header .sticky-header');
-				if (windowpos > 100) {
-					sticky_header.addClass("fixed-header animated slideInDown");
-					scrollLink.fadeIn(300);
-				}else {
-					sticky_header.removeClass("fixed-header animated slideInDown");
-					scrollLink.fadeOut(300);
-				}
-				if (windowpos > 1) {
-					siteHeader.addClass("fixed-header");
-				}else {
-					siteHeader.removeClass("fixed-header");
-				}
-			}
-		}
-
-    
+  //Update Header Style and Scroll to Top
+  function headerStyle() {
+    if ($('.main-header').length) {
+      var windowpos = $(window).scrollTop();
+      var siteHeader = $('.header-style-one');
+      var scrollLink = $('.scroll-to-top');
+      var sticky_header = $('.main-header .sticky-header');
+      if (windowpos > 100) {
+        sticky_header.addClass('fixed-header animated slideInDown');
+        scrollLink.fadeIn(300);
+      } else {
+        sticky_header.removeClass('fixed-header animated slideInDown');
+        scrollLink.fadeOut(300);
+      }
+      if (windowpos > 1) {
+        siteHeader.addClass('fixed-header');
+      } else {
+        siteHeader.removeClass('fixed-header');
+      }
+    }
+  }
 
   useEffect(() => {
     headerStyle();
 
     //Submenu Dropdown Toggle
-		if($('.main-header li.dropdown ul').length){
-			$('.main-header .navigation li.dropdown').append('<div class="dropdown-btn"><i class="fa fa-angle-down"></i></div>');
-		}
-  
-  }, [])
+    if ($('.main-header li.dropdown ul').length) {
+      $('.main-header .navigation li.dropdown').append(
+        '<div class="dropdown-btn"><i class="fa fa-angle-down"></i></div>',
+      );
+    }
+  }, []);
 
   let body = $('body');
   function renderMobileMenu() {
     //  $(body).toggleClass('mobile-menu-visible')
-  // setTimeout(() => {
-    body?.toggleClass('mobile-menu-visible')
+    // setTimeout(() => {
+    body?.toggleClass('mobile-menu-visible');
     // console.log("Hello");
   }
-  
 
   useEffect(() => {
-    if(body)
-      (renderMobileMenu());
-  }, [body])
-  
+    if (body) renderMobileMenu();
+  }, [body]);
 
   return (
     <header className='main-header header-style-one fixed-header'>
@@ -106,7 +101,7 @@ const Header1 = () => {
         <div className='main-box'>
           <div className='logo-box'>
             <div className='logo'>
-              <a href='index.html'>
+              <a href='#'>
                 <img src={logo} alt='' title='Tronis' />
               </a>
             </div>
@@ -173,7 +168,7 @@ const Header1 = () => {
         <nav className='menu-box'>
           <div className='upper-box'>
             <div className='nav-logo'>
-              <a href='index.html'>
+              <a href='#'>
                 <img src='images/logo-2.png' alt='' title='Fesho' />
               </a>
             </div>
@@ -185,22 +180,22 @@ const Header1 = () => {
           <ul className='navigation clearfix'>
             {/* Keep This Empty / Menu will come through Javascript */}
             <li className='current dropdown'>
-              <a href='index.html'>Home</a>
+              <a href='#'>Home</a>
               <ul>
                 <li>
-                  <a href='index.html'>Home page 01</a>
+                  <a href='#'>Home page 01</a>
                 </li>
                 <li>
-                  <a href='index-2.html'>Home page 02</a>
+                  <a href='#'>Home page 02</a>
                 </li>
                 <li className='dropdown'>
                   <a href='#'>Single Styles</a>
                   <ul>
                     <li>
-                      <a href='index-1-single.html'>Single Style One</a>
+                      <a href='#'>Single Style One</a>
                     </li>
                     <li>
-                      <a href='index-2-single.html'>Single Style Two</a>
+                      <a href='#'>Single Style Two</a>
                     </li>
                   </ul>
                   <div className='dropdown-btn'>
@@ -211,10 +206,10 @@ const Header1 = () => {
                   <a href='#'>Dark Styles</a>
                   <ul>
                     <li>
-                      <a href='index-1-dark.html'>Dark Style One</a>
+                      <a href='#'>Dark Style One</a>
                     </li>
                     <li>
-                      <a href='index-2-dark.html'>Dark Style Two</a>
+                      <a href='#'>Dark Style Two</a>
                     </li>
                   </ul>
                   <div className='dropdown-btn'>
@@ -222,7 +217,7 @@ const Header1 = () => {
                   </div>
                 </li>
                 <li>
-                  <a href='index-1-rtl.html'>RTL Style One</a>
+                  <a href='#'>RTL Style One</a>
                 </li>
               </ul>
               <div className='dropdown-btn'>
@@ -292,7 +287,7 @@ const Header1 = () => {
           <span className='fa fa-times'></span>
         </button>
         <div className='search-inner'>
-          <form method='post' action='index.html'>
+          <form method='post' action='#'>
             <div className='form-group'>
               <input type='search' name='search-field' value='' placeholder='Search...' required='' />
               <button type='submit'>
@@ -310,7 +305,7 @@ const Header1 = () => {
           <div className='inner-container'>
             {/* Logo */}
             <div className='logo'>
-              <a href='index.html' title=''>
+              <a href='#' title=''>
                 <img src='images/logo.png' alt='' title='' />
               </a>
             </div>
@@ -352,8 +347,8 @@ const Header1 = () => {
               </nav>
               {/* Main Menu End */}
               {/* Mobile Navigation Toggler */}
-              <div className='mobile-nav-toggler' onClick={renderMobileMenu} >
-                <span className='icon lnr-icon-bars' ></span>
+              <div className='mobile-nav-toggler' onClick={renderMobileMenu}>
+                <span className='icon lnr-icon-bars'></span>
               </div>
             </div>
           </div>

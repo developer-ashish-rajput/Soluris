@@ -10,7 +10,7 @@ import Button from '../Button';
 
 const Banner = () => {
   let settings = {
-    autoplay: false,
+    autoplay: true,
     dots: true,
     infinite: true,
     speed: 500,
