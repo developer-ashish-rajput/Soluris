@@ -4,7 +4,7 @@ import './Whychooseus.css';
 const Whychooseus = () => {
   return (
     <div>
-      <section id="contact" className='why-choose-us pb-lg-0'>
+      <section id='contact' className='why-choose-us pb-lg-0'>
         <div className='bg-image'></div>
         <div className='auto-container'>
           <div className='row'>
@@ -119,6 +119,7 @@ const Whychooseus = () => {
                         value='90'
                         readOnly='readonly'
                         style={{ display: 'none', width: '0px', visibility: 'hidden' }}
+                        onChange={()=>{}}
                       />
                     </div>
                     <div className='inner-text count-box counted'>
@@ -146,6 +147,7 @@ const Whychooseus = () => {
                         value='50'
                         readOnly='readonly'
                         style={{ display: 'none', width: '0px', visibility: 'hidden' }}
+                        onChange={()=>{}}
                       />
                     </div>
                     <div className='inner-text count-box counted'>

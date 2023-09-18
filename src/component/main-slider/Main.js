@@ -1,11 +1,11 @@
 import React from 'react';
-import img1 from '../../images/1.jpg'
-import img2 from '../../images/2.jpg'
+import img1 from '../../images/1.jpg';
+import img2 from '../../images/2.jpg';
 import './Main.css';
 
 const main = () => {
   return (
-    <div>
+    <>
       <section className='main-slider'>
         <div
           className='rev_slider_wrapper fullwidthbanner-container tp-mouseover'
@@ -274,10 +274,7 @@ const main = () => {
                           transformOrigin: '50% 50% 0px',
                         }}
                       >
-                        <a
-                          href='https://kodesolution.com/html/2023/soluris-html/page-about.html'
-                          className='theme-btn btn-style-one hvr-light'
-                        >
+                        <a href='#' className='theme-btn btn-style-one hvr-light'>
                           <span className='btn-title'>Discover More</span>
                         </a>
                       </div>
@@ -530,10 +527,7 @@ const main = () => {
                           transformOrigin: '50% 50% 0px',
                         }}
                       >
-                        <a
-                          href='https://kodesolution.com/html/2023/soluris-html/page-about.html'
-                          className='theme-btn btn-style-one hvr-light'
-                        >
+                        <a href='#' className='theme-btn btn-style-one hvr-light'>
                           <span className='btn-title'>Explore More</span>
                         </a>
                       </div>
@@ -576,7 +570,7 @@ const main = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

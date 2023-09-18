@@ -33,6 +33,7 @@ License: copyright commercial
 26. Main Footer
 **********************************************/
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+/* @import url(../utils/utils.css); */
 @import url('../utils/animate.css');
 @import url('../utils/owl.css');
 @import url('../utils/swiper.min.css');
@@ -135,6 +136,9 @@ Reset
   font-size: 100%;
 }
 
+html {
+  overflow-x: hidden !important;
+}
 ::-webkit-input-placeholder {
   color: #7c858c;
 }
@@ -5332,7 +5336,7 @@ Section Title
   position: relative;
   padding: 120px 0;
 }
-.testimonial-section . {
+.testimonial-section .icon-bg-dots {
   right: 0;
   left: auto;
   margin-right: -370px;
@@ -8534,7 +8538,7 @@ Page Title
 ====================================================================
 
 ***/
-@-webkit-keyframes "ripple" {
+/* @-webkit-keyframes "ripple" {
   70% {
     -webkit-box-shadow: 0 0 0 70px rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 70px rgba(255, 255, 255, 0);
@@ -8553,7 +8557,7 @@ Page Title
     -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
-}
+} */
 .page-title {
   position: relative;
   background-repeat: no-repeat;
@@ -8674,7 +8678,7 @@ Page Title
   text-align: center;
   line-height: 70px;
   background-color: #ffffff;
-  color: #ff6d2e;
+  color: #080517;
   z-index: 1;
   padding-left: 5px;
   font-size: 14px;

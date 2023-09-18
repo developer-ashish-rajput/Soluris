@@ -8474,7 +8474,7 @@ Page Title
 ====================================================================
 
 ***/
-@-webkit-keyframes "ripple" {
+/* @-webkit-keyframes "ripple" {
   70% {
     -webkit-box-shadow: 0 0 0 70px rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 70px rgba(255, 255, 255, 0);
@@ -8493,7 +8493,7 @@ Page Title
     -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
-}
+} */
 .page-title {
   position: relative;
   background-repeat: no-repeat;
@@ -8614,7 +8614,7 @@ Page Title
   text-align: center;
   line-height: 70px;
   background-color: #ffffff;
-  color: #ff6d2e;
+  color: #080517;
   z-index: 1;
   padding-left: 5px;
   font-size: 14px;

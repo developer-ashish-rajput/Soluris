@@ -44,10 +44,7 @@ const About = () => {
                   </a>
                 </div>
               </div>
-              <a
-                className='theme-btn btn-style-one mt-2'
-                href='https://kodesolution.com/html/2023/soluris-html/page-about.html'
-              >
+              <a className='theme-btn btn-style-one mt-2' href='#'>
                 Explore Now
               </a>
             </div>

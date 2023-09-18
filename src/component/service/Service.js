@@ -9,7 +9,7 @@ const serviceData = [
     subTitle: '01 Service',
     title: 'Wind Turbines',
     text: 'Hybrid energy refers to the use of multiple sources ...',
-    imgSrc: require('../../images/service-1.jpg').default,
+    imgSrc: require('../../images/service-1.jpg'),
     link: 'https://kodesolution.com/html/2023/soluris-html/page-service-details.html',
   },
   {
@@ -18,7 +18,7 @@ const serviceData = [
     subTitle: '02 Service',
     title: 'Maintenance',
     text: 'Wind turbines are devices that convert wind energy ...',
-    imgSrc: require('../../images/service-2.jpg').default,
+    imgSrc: require('../../images/service-2.jpg'),
     link: 'https://kodesolution.com/html/2023/soluris-html/page-service-details.html',
   },
   {
@@ -27,7 +27,7 @@ const serviceData = [
     subTitle: '03 Service',
     title: 'Wind Generators',
     text: 'Wind generators are devices that harness the ...',
-    imgSrc: require('../../images/service-3.jpg').default,
+    imgSrc: require('../../images/service-3.jpg'),
     link: 'https://kodesolution.com/html/2023/soluris-html/page-service-details.html',
   },
   {
@@ -36,7 +36,7 @@ const serviceData = [
     subTitle: '04 Service',
     title: 'Solar PV Systems',
     text: 'A Solar PV (photovoltaic) system is a type of ...',
-    imgSrc: require('../../images/service-4.jpg').default,
+    imgSrc: require('../../images/service-4.jpg'),
     link: 'https://kodesolution.com/html/2023/soluris-html/page-service-details.html',
   },
 ];
