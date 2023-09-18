@@ -5,6 +5,8 @@ import list_img2 from '../images/service-2.jpg';
 import list_img3 from '../images/service-3.jpg';
 import list_img4 from '../images/service-5.jpg';
 import { NavLink } from 'react-router-dom';
+import gql from 'graphql-tag';
+import { useQuery } from '@apollo/client';
 
 const serviceData = [
   {
@@ -40,6 +42,27 @@ const serviceData = [
   },
 ];
 
+const SERVICE_LIST = gql`
+  query GetService {
+    services {
+      data {
+        id
+        attributes {
+          title
+          description
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 const ServiceList = () => {
   const { loading, data, error } = useQuery(SERVICE_LIST);
   console.log(data);
@@ -61,30 +84,8 @@ const ServiceList = () => {
       <section className='services-section-home2'>
         <div className='large-container'>
           <div className='row'>
-            {serviceData.map((service) => (
-              <div key={service} className='col-xl-3 col-md-6'>
-                {/* <!-- Service Block Two --> */}
-                <div
-                  className='service-block-home2 wow fadeInUp animated'
-                  style={{ visibility: 'visible', animationName: ' fadeInUp' }}
-                >
-                  <figure className='image'>
-                    <NavLink to='/service-details'>
-                      <img src={service.img} alt='' />
-                    </NavLink>
-                  </figure>
-                  <div className='inner-box '>
-                    <i className='icon flaticon-solar-panel'></i>
-                    <h4 className='title mt-0'>
-                      <NavLink to='/service-details'>{service.title}</NavLink>
-                    </h4>
-                    <div className='text'>{service.Text}</div>
-                    <NavLink to='/service-details' className='read-more'>
-                      {service.button}
-                    </NavLink>
-                  </div>
-                </div>
-              </div>
+            {data?.services?.data?.map((service, index) => (
+              <ServiceDetail key={index} data={service} services={data?.services?.data} />
             ))}
           </div>
         </div>
@@ -94,3 +95,36 @@ const ServiceList = () => {
 };
 
 export default ServiceList;
+
+const ServiceDetail = ({ data }) => {
+  const img = data?.attributes.image?.data?.attributes?.url;
+  const title = data?.attributes?.title;
+  const description = data?.attributes?.description;
+
+  return (
+    <div className='col-xl-3 col-md-6'>
+      {/* <!-- Service Block Two --> */}
+      <div
+        className='service-block-home2 wow fadeInUp animated'
+        style={{ visibility: 'visible', animationName: ' fadeInUp' }}
+      >
+        <figure className='image'>
+          <NavLink to='/service-details'>
+            <img src={img} alt='' />
+          </NavLink>
+        </figure>
+        <div className='inner-box '>
+          <i className='icon flaticon-solar-panel'></i>
+          <h4 className='title mt-0'>
+            <NavLink to='/service-details'>{title}</NavLink>
+          </h4>
+          <div className='text'>{description}</div>
+          <NavLink to='/service-details' className='read-more'>
+            {/* {service.button} */}
+            Read More
+          </NavLink>
+        </div>
+      </div>
+    </div>
+  );
+};
