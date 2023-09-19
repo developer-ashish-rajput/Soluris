@@ -1,7 +1,29 @@
 import React from 'react';
 import './Whychooseus.css';
+import { gql, useQuery } from '@apollo/client';
+
+const WHYCHOOSE_US1 = gql`
+  query GetHome {
+    home {
+      data {
+        attributes {
+          whychooseus_label1
+          whychooseus_title1
+          whychooseus_heading1
+          whychoseus_heading2
+          whychooseus_description1
+          whychooseus_description2
+          projects_completed
+          clients_satisfied
+        }
+      }
+    }
+  }
+`;
 
 const Whychooseus = () => {
+  const { loading, data, error } = useQuery(WHYCHOOSE_US1);
+  const home = data?.home?.data?.attributes;
   return (
     <div>
       <section id='contact' className='why-choose-us pb-lg-0'>
@@ -15,29 +37,23 @@ const Whychooseus = () => {
                 style={{ visibility: 'visible', animationName: 'fadeInRight' }}
               >
                 <div className='sec-title light'>
-                  <span className='sub-title'>Why Choose Us</span>
-                  <h2>We are Building a Sustainable Future</h2>
+                  <span className='sub-title'>{home?.whychooseus_label1}</span>
+                  <h2>{home?.whychooseus_title1}</h2>
                 </div>
                 {/* Feature Block 1 */}
                 <div className='feature-block-two pb-30'>
                   <div className='inner-box'>
                     <i className='icon fas fa-check'></i>
-                    <h4 className='title'>Best energy solution</h4>
-                    <p className='text'>
-                      The best energy solution depends on several factors, including your specific needs, location,
-                      budget, and environmental considerations.
-                    </p>
+                    <h4 className='title'>{home?.whychooseus_heading1}</h4>
+                    <p className='text'>{home?.whychooseus_description1}</p>
                   </div>
                 </div>
                 {/* Feature Block 2 */}
                 <div className='feature-block-two border-bottom-0'>
                   <div className='inner-box'>
                     <i className='icon fas fa-check'></i>
-                    <h4 className='title'>24/7 Technical Support</h4>
-                    <p className='text'>
-                      At Sustainable Energy Services, we understand the importance of reliable and uninterrupted access
-                      to technical support when it comes to sustainable energy systems.
-                    </p>
+                    <h4 className='title'>{home?.whychooseus_heading2}</h4>
+                    <p className='text'>{home?.whychooseus_description2}</p>
                   </div>
                 </div>
               </div>
@@ -119,12 +135,12 @@ const Whychooseus = () => {
                         value='90'
                         readOnly='readonly'
                         style={{ display: 'none', width: '0px', visibility: 'hidden' }}
-                        onChange={()=>{}}
+                        onChange={() => {}}
                       />
                     </div>
                     <div className='inner-text count-box counted'>
                       <span className='count-text txt' data-stop='99' data-speed='2000'>
-                        99
+                        {home?.projects_completed}
                       </span>
                       %
                     </div>
@@ -147,12 +163,12 @@ const Whychooseus = () => {
                         value='50'
                         readOnly='readonly'
                         style={{ display: 'none', width: '0px', visibility: 'hidden' }}
-                        onChange={()=>{}}
+                        onChange={() => {}}
                       />
                     </div>
                     <div className='inner-text count-box counted'>
                       <span className='count-text txt' data-stop='50' data-speed='2000'>
-                        50
+                        {home?.clients_satisfied}
                       </span>
                       %
                     </div>

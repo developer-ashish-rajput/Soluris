@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../images/logo-2.png';
+import logo from '../../images/qss-logo.png';
 import $ from 'jquery';
 
 const Header1 = () => {
@@ -102,7 +102,7 @@ const Header1 = () => {
           <div className='logo-box'>
             <div className='logo'>
               <a href='#'>
-                <img src={logo} alt='' title='Tronis' />
+                <img src={logo} width={150} alt='' title='Tronis' />
               </a>
             </div>
           </div>
@@ -169,7 +169,7 @@ const Header1 = () => {
           <div className='upper-box'>
             <div className='nav-logo'>
               <a href='#'>
-                <img src='images/logo-2.png' alt='' title='Fesho' />
+                <img src={logo} alt='' title='Fesho' />
               </a>
             </div>
             <div className='close-btn' onClick={renderMobileMenu}>
@@ -306,7 +306,7 @@ const Header1 = () => {
             {/* Logo */}
             <div className='logo'>
               <a href='#' title=''>
-                <img src='images/logo.png' alt='' title='' />
+                <img src={logo} alt='' title='' />
               </a>
             </div>
 

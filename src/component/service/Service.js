@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './service.css';
 
@@ -40,7 +39,7 @@ const serviceData = [
     link: 'https://kodesolution.com/html/2023/soluris-html/page-service-details.html',
   },
 ];
-
+// !Todo add sustainable services to backend
 const Service = () => {
   return (
     <section className='services-section-home1 pb-lg-0'>
