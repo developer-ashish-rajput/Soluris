@@ -2,8 +2,52 @@ import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/qss-logo.png';
 import $ from 'jquery';
+import { gql, useQuery } from '@apollo/client';
+
+const HEADER = gql`
+  query GetHome {
+    home {
+      data {
+        attributes {
+          address
+          time
+          contact_no
+          logo {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const HEADER_DATA = gql`
+  query GetHeader {
+    headers {
+      data {
+        attributes {
+          title
+          routing
+        }
+      }
+    }
+  }
+`;
 
 const Header1 = () => {
+  const { loading, data, error } = useQuery(HEADER);
+  const { data: data_1 } = useQuery(HEADER_DATA);
+
+  const home = data?.home?.data?.attributes;
+  const logo_2 = home?.logo?.data?.attributes?.url;
+
+  const header = data_1?.headers?.data;
+  console.log(data);
+
   //Update Header Style and Scroll to Top
   function headerStyle() {
     if ($('.main-header').length) {
@@ -57,13 +101,15 @@ const Header1 = () => {
           {/* Info List */}
           <ul className='list-style-one'>
             <li>
-              <i className='fa fa-map-marker-alt'></i> 380 St Kilda Road, Australia
+              <i className='fa fa-map-marker-alt'></i>
+              {home?.address}
             </li>
             <li>
-              <i className='fa fa-clock'></i> Mon - Sat: 8am - 5pm
+              <i className='fa fa-clock'></i>
+              {home?.time}
             </li>
             <li>
-              <i className='fa fa-phone-volume'></i> <a href='tel:+92(8800)87890'>+92 (8800) 87890</a>
+              <i className='fa fa-phone-volume'></i> <a href='tel:+92(8800)87890'>{home?.contact_no}</a>
             </li>
           </ul>
         </div>
@@ -102,7 +148,7 @@ const Header1 = () => {
           <div className='logo-box'>
             <div className='logo'>
               <a href='#'>
-                <img src={logo} width={150} alt='' title='Tronis' />
+                <img src={logo_2} width={150} alt='' title='Tronis' />
               </a>
             </div>
           </div>
@@ -111,10 +157,16 @@ const Header1 = () => {
           <div className='nav-outer'>
             <nav className='nav main-menu'>
               <ul className='navigation'>
-                <li className='current'>
-                  <NavLink to='/'>Home</NavLink>
-                </li>
-                <li className=''>
+                {header?.map((item) => {
+                  return (
+                    <>
+                      <li className='current'>
+                        <NavLink to={item?.attributes?.routing}>{item?.attributes?.title}</NavLink>
+                      </li>
+                    </>
+                  );
+                })}
+                {/* <li className=''>
                   <NavLink to='#'>About</NavLink>
                 </li>
                 <li className=''>
@@ -134,7 +186,7 @@ const Header1 = () => {
 
                 <li className=''>
                   <NavLink to='/contact'>Contact</NavLink>
-                </li>
+                </li> */}
 
                 {/* Add more menu items here */}
               </ul>
@@ -179,7 +231,16 @@ const Header1 = () => {
 
           <ul className='navigation clearfix'>
             {/* Keep This Empty / Menu will come through Javascript */}
-            <li className='current dropdown'>
+            {header?.map((item) => {
+              return (
+                <>
+                  <li className='current' onClick={renderMobileMenu}>
+                    <NavLink to={item?.attributes?.routing}>{item?.attributes?.title}</NavLink>
+                  </li>
+                </>
+              );
+            })}
+            {/* <li className='current dropdown'>
               <a href='#'>Home</a>
               <ul>
                 <li>
@@ -223,7 +284,7 @@ const Header1 = () => {
               <div className='dropdown-btn'>
                 <i className='fa fa-angle-down'></i>
               </div>
-            </li>
+            </li> */}
             {/* Add more menu items here */}
           </ul>
 
@@ -233,7 +294,7 @@ const Header1 = () => {
               <div className='contact-info-box'>
                 <i className='icon lnr-icon-phone-handset'></i>
                 <span className='title'>Call Now</span>
-                <a href='tel:+92880098670'>+92 (8800) - 98670</a>
+                <a href={`tel:${home?.contact_no}`}>{home?.contact_no}</a>
               </div>
             </li>
             <li>
@@ -248,7 +309,7 @@ const Header1 = () => {
               {/* Contact Info Box */}
               <div className='contact-info-box'>
                 <span className='icon lnr-icon-clock'></span>
-                <span className='title'>Send Email</span>
+                <span className='title'>Time</span>
                 Mon - Sat 8:00 - 6:30, Sunday - CLOSED
               </div>
             </li>
@@ -317,7 +378,16 @@ const Header1 = () => {
                 <div className='navbar-collapse show collapse clearfix'>
                   <ul className='navigation clearfix'>
                     {/* Keep This Empty / Menu will come through Javascript */}
-                    <li className='current'>
+                    {header?.map((item) => {
+                      return (
+                        <>
+                          <li className='current'>
+                            <NavLink to={item?.attributes?.routing}>{item?.attributes?.title}</NavLink>
+                          </li>
+                        </>
+                      );
+                    })}
+                    {/* <li className='current'>
                       <NavLink to='/'>Home</NavLink>
                     </li>
                     <li className=''>
@@ -340,7 +410,7 @@ const Header1 = () => {
 
                     <li className=''>
                       <NavLink to='/contact'>Contact</NavLink>
-                    </li>
+                    </li> */}
                     {/* Add more menu items here */}
                   </ul>
                 </div>
