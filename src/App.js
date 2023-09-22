@@ -13,7 +13,7 @@ import Contact from './component/contact/Contact';
 import Header1 from './component/header/Header1';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-const url = `${process.env.REACT_APP_API_URL||'http://qss-env.eba-txuyvnzx.ap-southeast-2.elasticbeanstalk.com'}/graphql`;
+const url = `${process.env.REACT_APP_API_URL || 'https://qss-backend.onrender.com'}/graphql`;
 // console.log(process.env.NODE_ENV, process.env.REACT_APP_API_URL);
 
 console.log(process.env.NODE_ENV, process.env.REACT_APP_API_URL);

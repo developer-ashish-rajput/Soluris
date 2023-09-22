@@ -70,7 +70,7 @@ export const Project = ({ project }) => {
         <div className='inner-box'>
           <div className='image-box'>
             <figure className='image'>
-              <NavLink to='/project-details' className='lightbox-image'>
+              <NavLink to={`/project-details/${project?.id}`} className='lightbox-image'>
                 <img src={`${project?.attributes?.image?.data?.attributes?.url}`} alt={project?.attributes?.title} />
               </NavLink>
             </figure>
