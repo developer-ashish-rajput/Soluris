@@ -32,7 +32,6 @@ const BANNER = gql`
 const Banner = () => {
   const { loading, data, error } = useQuery(BANNER);
   const banner = data?.banners?.data;
-  console.log(banner?.length);
   let settings = {
     autoplay: true,
     dots: true,
