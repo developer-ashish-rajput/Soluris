@@ -25,7 +25,6 @@ const Service = () => {
         <h3 className='widget-title'>Service</h3>
         <ul className='user-links d-block'>
           {service?.map((item) => {
-            console.log(item);
             return (
               <>
                 <li className='current w-100'>

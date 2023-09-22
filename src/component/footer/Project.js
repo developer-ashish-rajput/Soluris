@@ -32,7 +32,6 @@ const Project = () => {
         <h3 className='widget-title'>Projects</h3>
         <ul className='user-links two-column d-block'>
           {project?.map((item, index) => {
-            console.log(item);
             return (
               <>
                 <li key={index} className='current w-100'>

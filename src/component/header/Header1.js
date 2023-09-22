@@ -46,8 +46,6 @@ const Header1 = () => {
   const logo_2 = home?.logo?.data?.attributes?.url;
 
   const header = data_1?.headers?.data;
-  console.log(data);
-
   //Update Header Style and Scroll to Top
   function headerStyle() {
     if ($('.main-header').length) {
