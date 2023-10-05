@@ -27,7 +27,7 @@ const HEADER = gql`
 
 const HEADER_DATA = gql`
   query GetHeader {
-    headers {
+    headers(sort:"id") {
       data {
         attributes {
           title
@@ -46,6 +46,8 @@ const Header1 = () => {
   const logo_2 = home?.logo?.data?.attributes?.url;
 
   const header = data_1?.headers?.data;
+  console.log(header);
+
   //Update Header Style and Scroll to Top
   function headerStyle() {
     if ($('.main-header').length) {
