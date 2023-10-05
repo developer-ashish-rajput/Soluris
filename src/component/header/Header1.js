@@ -98,16 +98,17 @@ const Header1 = () => {
         <div className='top-left'>
           {/* Info List */}
           <ul className='list-style-one'>
-            <li>
-              <i className='fa fa-map-marker-alt'></i>
+            <li style={{ gap: '5px' }}>
+              <i style={{ color: '#b0d129' }} className='fa fa-map-marker-alt'></i>
               {home?.address}
             </li>
-            <li>
-              <i className='fa fa-clock'></i>
+            <li style={{ gap: '5px' }}>
+              <i style={{ color: '#b0d129' }} className='fa fa-clock'></i>
               {home?.time}
             </li>
-            <li>
-              <i className='fa fa-phone-volume'></i> <a href='tel:+92(8800)87890'>{home?.contact_no}</a>
+            <li style={{ gap: '5px' }}>
+              <i style={{ color: '#b0d129' }} className='fa fa-phone-volume'></i>{' '}
+              <a href='tel:+92(8800)87890'>{home?.contact_no}</a>
             </li>
           </ul>
         </div>

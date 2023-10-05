@@ -52,7 +52,7 @@ const Whychooseus = () => {
                 <div className='feature-block-two border-bottom-0'>
                   <div className='inner-box'>
                     <i className='icon fas fa-check'></i>
-                    <h4 className='title'>{home?.whychooseus_heading2}</h4>
+                    <h4 className='title'>{home?.whychoseus_heading2}</h4>
                     <p className='text'>{home?.whychooseus_description2}</p>
                   </div>
                 </div>

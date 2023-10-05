@@ -1,46 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './service.css';
+import TextTruncate from 'react-text-truncate';
+import AlertDialog from './ServiceModal';
 
 const serviceData = [
   {
     id: 1,
     iconClass: 'flaticon-wind-energy-1',
     subTitle: '01 Service',
-    title: 'Wind Turbines',
-    text: 'Hybrid energy refers to the use of multiple sources ...',
+    title: 'Design',
+    text: 'Quick Solar Solutions has in house designer and experts to provide you CAD drawing for roof mounting, wall mounting, metal sheet mounting and custom design speciality solar structures. Our Qualified engineering team designs an optimum racking to provide you most durable solar support structures and flexibility to work with different dimensions of Pv module.',
     imgSrc: require('../../images/service-1.jpg'),
-    link: 'https://kodesolution.com/html/2023/soluris-html/page-service-details.html',
+    link: '#',
   },
   {
     id: 2,
     iconClass: 'flaticon-settings-2',
     subTitle: '02 Service',
-    title: 'Maintenance',
-    text: 'Wind turbines are devices that convert wind energy ...',
+    title: 'Installation',
+    text: 'The company has licenses to work on solar mounting projects. Our young and energetic installation crew are trained under expert guidance of Strut Support and work with on-site engineers to mount the solar racking systems',
     imgSrc: require('../../images/service-2.jpg'),
-    link: 'https://kodesolution.com/html/2023/soluris-html/page-service-details.html',
+    link: '#',
   },
   {
     id: 3,
-    iconClass: 'flaticon-windmill',
+    iconClass: 'flaticon-support',
     subTitle: '03 Service',
-    title: 'Wind Generators',
-    text: 'Wind generators are devices that harness the ...',
+    title: 'Techincal Support',
+    text: 'Our highly engineered and robust solar structural systems are backed by excellent end-to-end technical support. All of our support team members have technical background and extensive experience in the solar industry. We are committed to exceed the expectations of our customers.',
     imgSrc: require('../../images/service-3.jpg'),
-    link: 'https://kodesolution.com/html/2023/soluris-html/page-service-details.html',
+    link: '#',
   },
   {
     id: 4,
     iconClass: 'flaticon-solar-panel',
     subTitle: '04 Service',
-    title: 'Solar PV Systems',
-    text: 'A Solar PV (photovoltaic) system is a type of ...',
+    title: 'Supply',
+    text: 'Module mounting structure along with accessories supply. With trusted partners, leased units and patented toolings, Its stands out as industry leading solar mounting manufacturers with dedicated and proven supply chain capability of delivering for ultra mega power projects.',
     imgSrc: require('../../images/service-4.jpg'),
-    link: 'https://kodesolution.com/html/2023/soluris-html/page-service-details.html',
+    link: '#',
   },
 ];
 // !Todo add sustainable services to backend
 const Service = () => {
+  const [modals, setModals] = useState([]);
+
+  const handleModal = (index) => () => {
+    let _modals = [...modals];
+    _modals[index] = { open: true };
+    setModals(_modals);
+  };
+
   return (
     <section className='services-section-home1 pb-lg-0'>
       <div className='auto-container'>
@@ -49,7 +59,7 @@ const Service = () => {
           <h2>Sustainable Energy Services</h2>
         </div>
         <div className='row'>
-          {serviceData.map((service) => (
+          {serviceData.map((service, index) => (
             <div
               key={service.id}
               className='service-block col-lg-3 col-sm-6 wow fadeInUp animated'
@@ -62,14 +72,26 @@ const Service = () => {
                   <h4 className='title'>
                     <a href={service.link}>{service.title}</a>
                   </h4>
-                  <div className='text'>{service.text}</div>
-                  <a href='https://kodesolution.com/html/2023/soluris-html/index.html' className='read-more'>
+                  <TextTruncate line={3} element='div' truncateText='...' text={service?.text} />
+                  {/* <div className='text'>{service.text}</div> */}
+                  <div title='Read more' className='read-more' onClick={handleModal(index)}>
                     <i className='fa fa-chevron-right'></i>
-                  </a>
+                  </div>
+                  {
+                    <AlertDialog
+                      key={`modal-${index}`}
+                      text={service?.text}
+                      title={service?.title}
+                      open={modals[index]?.open}
+                      modals={modals}
+                      index={index}
+                      setModals={setModals}
+                    />
+                  }
                 </div>
                 <div className='image-box'>
                   <figure className='image'>
-                    <a href={service.link}>
+                    <a>
                       <img src={service.imgSrc} alt='' />
                     </a>
                   </figure>
