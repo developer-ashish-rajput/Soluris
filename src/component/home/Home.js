@@ -7,6 +7,7 @@ import Whychooseus2 from '../whychooseus2/Whychooseus2';
 import Work from '../work/Work';
 import Calltoaction from '../calltoaction/Calltoaction';
 import Banner from '../banner/Banner';
+import Counter from '../counter/Counter';
 
 const Home = () => {
   return (
@@ -15,7 +16,8 @@ const Home = () => {
       <Banner />
       <About />
       <Service />
-      <Whychooseus />
+      {/* <Whychooseus /> */}
+      <Counter />
       <Whychooseus2 />
       <Work />
       <Calltoaction />

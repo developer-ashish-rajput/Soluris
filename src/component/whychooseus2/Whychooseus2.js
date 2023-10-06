@@ -8,14 +8,14 @@ const WHYCHOOSE_US2 = gql`
     home {
       data {
         attributes {
-          whychooseus_label2
-          whychooseus_title2
-          whychooseus2_description
-          whychooseus2_service_label1
-          whychooseus2_service_label2
-          whychooseus2_service_description1
-          whychooseus2_service_description2
-          whychooseus2_image {
+          whychooseus_label
+          whychooseus_title
+          whychooseus_description
+          # whychooseus2_service_label1
+          # whychooseus2_service_label2
+          # whychooseus_service_description1
+          # whychooseus2_service_description2
+          whychooseus_image {
             data {
               attributes {
                 url
@@ -25,13 +25,27 @@ const WHYCHOOSE_US2 = gql`
         }
       }
     }
+    newProduct {
+      data{
+        attributes{
+          title
+          label1
+          label2 
+          label3 
+          label4 description1 description2 description3 description4
+        }
+      }
+    }
   }
 `;
 
 const Whychooseus2 = () => {
   const { loading, data, error } = useQuery(WHYCHOOSE_US2);
   const home = data?.home?.data?.attributes;
-  const image = home?.whychooseus2_image?.data?.attributes?.url;
+  const image = home?.whychooseus_image?.data?.attributes?.url;
+  const new_product = data?.newProduct?.data?.attributes;
+
+console.log(new_product);
   return (
     <section className='why-choose-us-home1'>
       <div className='bg-image d-none d-lg-block' style={{ backgroundImage: 'url(images/icons/video.png)' }}></div>
@@ -47,25 +61,44 @@ const Whychooseus2 = () => {
               style={{ visibility: 'visible', animationName: 'fadeInLeft' }}
             >
               <div className='sec-title light'>
-                <span className='sub-title'>{home?.whychooseus_label2}</span>
-                <h2>{home?.whychooseus_title2}</h2>
-                <div className='text'>{home?.whychooseus2_description}</div>
+                <span className='sub-title'>{home?.whychooseus_label}</span>
+                <h2>{home?.whychooseus_title}</h2>
+                <div className='text'>{home?.whychooseus_description}</div>
               </div>
               <div className='row'>
                 {/* Feature Block Four 1 */}
+                <div className='sec-title light'>
+                <h2>{new_product?.title}</h2>
+                </div>
                 <div className='feature-block-four col-sm-6'>
                   <div className='inner-box'>
-                    <i className='icon flaticon-shield'></i>
-                    <h4 className='title'>{home?.whychooseus2_service_label1}</h4>
-                    <p className='text'>{home?.whychooseus2_service_description1}</p>
+                  <i className='icon flaticon-solar-panel-2'></i>
+                    <h4 className='title'>{new_product?.label1}</h4>
+                    <p className='text'>{new_product?.description1}</p>
                   </div>
                 </div>
                 {/* Feature Block Four 2 */}
                 <div className='feature-block-four col-sm-6'>
                   <div className='inner-box'>
                     <i className='icon flaticon-solar-panel-2'></i>
-                    <h4 className='title'>{home?.whychooseus2_service_label2}</h4>
-                    <p className='text'>{home?.whychooseus2_service_description2}</p>
+                    <h4 className='title'>{new_product?.label2}</h4>
+                    <p className='text'>{new_product?.description2}</p>
+                  </div>
+                </div>
+
+                <div className='feature-block-four col-sm-6'>
+                  <div className='inner-box'>
+                    <i className='icon flaticon-solar-panel-2'></i>
+                    <h4 className='title'>{new_product?.label3}</h4>
+                    <p className='text'>{new_product?.description3}</p>
+                  </div>
+                </div>
+
+                <div className='feature-block-four col-sm-6'>
+                  <div className='inner-box'>
+                    <i className='icon flaticon-solar-panel-2'></i>
+                    <h4 className='title'>{new_product?.label4}</h4>
+                    <p className='text'>{new_product?.description4}</p>
                   </div>
                 </div>
               </div>

@@ -8,6 +8,8 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
+import no_image from '../images/no-image.png'
+
 const DetailsData = {
   id: 1,
   BannerImg: details_img1,
@@ -39,13 +41,6 @@ const SERVICE_DETAILS = gql`
         attributes {
           title
           description
-          icon {
-            data {
-              attributes {
-                url
-              }
-            }
-          }
           image {
             data {
               attributes {
@@ -53,12 +48,13 @@ const SERVICE_DETAILS = gql`
               }
             }
           }
-          overview_description
-          center_title
-          center_description
+          # secondary_description
+          # secondary_title
+          # center_description
+
           contact_title
           contact_no
-          overview_title
+          # overview_title
           help_text
           banner_image {
             data {
@@ -67,6 +63,8 @@ const SERVICE_DETAILS = gql`
               }
             }
           }
+          secondary_title
+          secondary_description
         }
       }
     }
@@ -79,7 +77,7 @@ const ServiceDetails = ({ services }) => {
   //!Todo add services query  !Important
   const { loading, error, data } = useQuery(SERVICE_DETAILS, {
     variables: {
-      id: '1',
+      id: id,
     },
   });
 
@@ -133,59 +131,23 @@ const ServiceDetails = ({ services }) => {
                     </div>
                   </div>
 
-                  {/* <!--Start Services Details Sidebar Single--> */}
-                  <div className='sidebar-widget service-sidebar-single mt-4'>
-                    <div
-                      className='service-sidebar-single-btn wow fadeInUp'
-                      data-wow-delay='0.5s'
-                      data-wow-duration='1200m'
-                      style={{
-                        visibility: 'hidden',
-                        animationDelay: '0.5s',
-                        animationName: 'none',
-                      }}
-                    >
-                      <a href='/service-details' className='theme-btn btn-style-one d-grid'>
-                        <span className='btn-title'>
-                          <span className='fas fa-file-pdf'></span> download pdf file
-                        </span>
-                      </a>
-                    </div>
-                  </div>
+            
                 </div>
-                <div className='sidebar-widget service-sidebar-single mt-4'>
-                  <div
-                    className='service-sidebar-single-btn wow fadeInUp animated'
-                    data-wow-delay='0.5s'
-                    data-wow-duration='1200m'
-                    style={{
-                      visibility: 'visible',
-                      animationDelay: '0.5s',
-                      animationName: 'fadeInUp',
-                    }}
-                  >
-                    <a href='#' className='theme-btn btn-style-one d-grid'>
-                      <span className='btn-title'>
-                        <span className='fas fa-file-pdf'></span> download pdf file
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                {/* <!--End Services Details Sidebar--> */}
+           
               </div>
             </div>
 
             {/* <!--Start Services Details Content--> */}
             <div className='col-xl-8 col-lg-8'>
               <div key={details?.id} className='services-details__content'>
-                <img src={details?.banner_image?.data?.attributes?.url} alt='' />
-                <h3 className='mt-4'>{details?.overview_title}</h3>
-                <p>{details?.overview_description}</p>
-                <p>{details?.OverviewDesc2}</p>
+                <img src={details?.banner_image?.data?.attributes?.url || no_image} alt='' />
+                <h3 className='mt-4'>{details?.title}</h3>
+                <p>{details?.description}</p>
+                {/* <p>{details?.OverviewDesc2}</p> */}
                 <div className='content mt-40'>
                   <div className='text'>
-                    <h3>{details?.center_title}</h3>
-                    <ReactMarkdown>{details?.center_description}</ReactMarkdown>
+                    <h3>{details?.secondary_title}</h3>
+                    <ReactMarkdown>{details?.secondary_description}</ReactMarkdown>
                     <blockquote className='blockquote-one'>{details?.ServiceDesc2}</blockquote>
                   </div>
                   <div className='feature-list mt-4'>
@@ -205,81 +167,7 @@ const ServiceDetails = ({ services }) => {
                     </div>
                   </div>
                 </div>
-                <div className='mt-25'>
-                  <h3>{details?.titleQuestion}</h3>
-                  <p>{details?.QuestionDisc}</p>
-                  <ul
-                    className='accordion-box wow fadeInRight animated'
-                    style={{
-                      visibility: 'visible',
-                      animationName: 'fadeInRight',
-                    }}
-                  >
-                    {/* FAQ Item 1 */}
-                    <li className='accordion block'>
-                      <div className='acc-btn'>
-                        Is my technology allowed on tech?
-                        <div className='icon fa fa-plus'></div>
-                      </div>
-                      <div className='acc-content' style={{ display: 'none' }}>
-                        <div className='content'>
-                          <div className='text'>
-                            There are many variations of passages the majority have suffered alteration in some fo
-                            injected humour, or randomised words believable.
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-
-                    {/* FAQ Item 2 */}
-                    <li className='accordion block'>
-                      <div className='acc-btn'>
-                        How to soft launch your business?
-                        <div className='icon fa fa-plus'></div>
-                      </div>
-                      <div className='acc-content current' style={{ display: 'none' }}>
-                        <div className='content'>
-                          <div className='text'>
-                            There are many variations of passages the majority have suffered alteration in some fo
-                            injected humour, or randomised words believable.
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-
-                    {/* FAQ Item 3 */}
-                    <li className='accordion block'>
-                      <div className='acc-btn'>
-                        How to turn visitors into contributors
-                        <div className='icon fa fa-plus'></div>
-                      </div>
-                      <div className='acc-content' style={{ display: 'none' }}>
-                        <div className='content'>
-                          <div className='text'>
-                            There are many variations of passages the majority have suffered alteration in some fo
-                            injected humour, or randomised words believable.
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-
-                    {/* FAQ Item 4 */}
-                    <li className='accordion block active-block'>
-                      <div className='acc-btn active'>
-                        How can I find my solutions?
-                        <div className='icon fa fa-plus'></div>
-                      </div>
-                      <div className='acc-content' style={{ display: 'block' }}>
-                        <div className='content'>
-                          <div className='text'>
-                            There are many variations of passages the majority have suffered alteration in some fo
-                            injected humour, or randomised words believable.
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+              
               </div>
             </div>
           </div>

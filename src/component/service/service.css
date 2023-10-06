@@ -3,6 +3,7 @@
   position: relative;
   padding: 120px 0 90px;
   z-index: 1;
+  margin-bottom: 300px;
 }
 .services-section-home1 .icon-wave-line {
   left: -620px;
@@ -17,6 +18,12 @@
 @media (max-width: 991.98px) {
   .service-block {
     margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 786px) {
+  .services-section-home1 {
+    margin-bottom: 0px;
   }
 }
 .service-block .inner-box {

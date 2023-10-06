@@ -7,6 +7,8 @@ import list_img4 from '../images/service-5.jpg';
 import { NavLink } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
+import TextTruncate from 'react-text-truncate';
+import no_image from '../images/no-image.png'
 
 const serviceData = [
   {
@@ -100,6 +102,8 @@ const ServiceDetail = ({ data }) => {
   const img = data?.attributes.image?.data?.attributes?.url;
   const title = data?.attributes?.title;
   const description = data?.attributes?.description;
+  const id = data?.id
+  console.log(data);
 
   return (
     <div className='col-xl-3 col-md-6'>
@@ -108,18 +112,22 @@ const ServiceDetail = ({ data }) => {
         className='service-block-home2 wow fadeInUp animated'
         style={{ visibility: 'visible', animationName: ' fadeInUp' }}
       >
-        <figure className='image'>
-          <NavLink to='/service-details'>
-            <img src={img} alt='' />
+        <figure className='image' style={{height:330}}>
+          <NavLink to={`/service-details/${id}`}>
+            <img src={img||no_image} alt='' height={'100%'} />
           </NavLink>
         </figure>
-        <div className='inner-box '>
+        <div className='inner-box ' >
           <i className='icon flaticon-solar-panel'></i>
-          <h4 className='title mt-0'>
-            <NavLink to='/service-details'>{title}</NavLink>
+          <h4 className='title mt-0 text-uppercase'>
+            <NavLink to={`/service-details/${id}`}>
+              {/* <TextTruncate element='h5' text={title} line={2} truncateText='...'/> */}
+              {title}
+            </NavLink>
           </h4>
-          <div className='text'>{description}</div>
-          <NavLink to='/service-details' className='read-more'>
+          {/* <div className='text'>{description}</div> */}
+          <TextTruncate element='p' line={3} text={description} truncateText='...' />
+          <NavLink to={`/service-details/${id}`} className='read-more'>
             {/* {service.button} */}
             Read More
           </NavLink>
